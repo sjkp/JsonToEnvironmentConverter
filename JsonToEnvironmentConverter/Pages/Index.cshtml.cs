@@ -73,6 +73,7 @@ namespace JsonToEnvironmentConverter.Pages
                         "Yaml" when YamlFormat == "Kubernetes" => "- name: \"{0}\"\n" + "  value: \"{1}\"",
                         "Yaml" when YamlFormat == "AzureAppSettings" =>
                             "{{\r\n    \"name\": \"{0}\",\r\n    \"value\": \"{1}\",\r\n    \"slotSetting\": false\r\n}},",
+                        "Yaml" when YamlFormat == "Bicep" => "{{\r\n    name: '{0}'\r\n    value: '{1}'\r\n}}",
                         "Yaml" => "\"{0}\": \"{1}\"",
                         _ => "{0}={1}"
                     };
